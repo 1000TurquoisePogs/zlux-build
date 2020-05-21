@@ -8,13 +8,12 @@
 # 
 # Copyright Contributors to the Zowe Project.
 
-mkdir -p $PREFIX/share/zowe/app-server/plugins/$PKG_NAME/$PKG_VERSION
-cp -r ${SRC_DIR}/* $PREFIX/share/zowe/app-server/plugins/$PKG_NAME/$PKG_VERSION
-mkdir -p $PREFIX/share/zowe/app-server/zlux-app-server/defaults/plugins
-echo "{\"identifier\":\"${PKG_NAME}\",\"pluginLocation\":\"${PREFIX}/share/zowe/app-server/plugins/${PKG_NAME}/${PKG_VERSION}\"}" \
-     > $PREFIX/share/zowe/app-server/zlux-app-server/defaults/plugins/${PKG_NAME}.json
+# /plugins is a primary location for plugins of a component. Secondarily, /components/componentname/plugins
 
-cd $PREFIX/share/zowe/app-server/plugins/$PKG_NAME/$PKG_VERSION
+destination=$PREFIX/opt/zowe/plugins/app-server/$PKG_NAME/$PKG_VERSION
+mkdir -p $destination
+cp -r ${SRC_DIR}/* $destination
+cd $destination
 rm -f build_env_setup.sh conda_build.sh metadata_conda_debug.yaml *.ppf
 
 exit 0
