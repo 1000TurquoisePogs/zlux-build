@@ -10,7 +10,7 @@
 
 # /plugins is a primary location for plugins of a component. Secondarily, /components/componentname/plugins
 
-destination=$PREFIX/opt/zowe/plugins/app-server/$PKG_NAME/$PKG_VERSION
+destination=$PREFIX/opt/zowe/plugins/app-server/$PKG_NAME
 mkdir -p $destination
 cp -r ${SRC_DIR}/* $destination
 cd $destination

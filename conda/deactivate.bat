@@ -21,6 +21,6 @@ if exist "%ZOWE_WORKSPACE_DIR%\app-server\ZLUX" (
 if not defined ZOWE_INST (
   exit 1
 ) else if exist "!ZOWE_INST!\workspace\app-server\plugins\%PKG_NAME%.json" (
-  set location=%PREFIX%\opt\zowe\plugins\app-server\%PKG_NAME%\%PKG_VERSION%
-  node -e "const fs=require('fs'); const content=require('!ZOWE_INST!/workspace/app-server/plugins/%PKG_NAME%'); if (content.pluginLocation == '!location!') { fs.unlinkSync('!ZOWE_INST!/workspace/app-server/plugins/${PKG_NAME}'); }"
+  set location=%PREFIX%\opt\zowe\plugins\app-server\%PKG_NAME%
+  node -e "const fs=require('fs'); const content=require('!ZOWE_INST!/workspace/app-server/plugins/%PKG_NAME%.json'); if (content.pluginLocation == '!location!') { fs.unlinkSync('!ZOWE_INST!/workspace/app-server/plugins/%PKG_NAME%.json'); }"
 )
