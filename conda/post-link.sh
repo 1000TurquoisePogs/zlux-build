@@ -36,7 +36,7 @@ if [ -z $ZOWE_INST ]
 then
   if [ -z $ZOWE_ROOT ]
   then
-    exit 1
+    echo "${PKG_NAME} not registered to Zowe because no instance found. To manually install, run INSTANCE_DIR/bin/install-app.sh $PREFIX/opt/zowe/plugins/app-server/$PKG_NAME"
   else
     ${ZOWE_ROOT}/components/app-server/share/zlux-app-server/bin/install-app.sh $PREFIX/opt/zowe/plugins/app-server/$PKG_NAME
   fi

@@ -34,10 +34,8 @@ fi
 
 if [ -z $ZOWE_INST ]
 then
-  if [ -z $ZOWE_ROOT ]
+  if [ -n $ZOWE_ROOT ]
   then
-    exit 1
-  else
     ${ZOWE_ROOT}/components/app-server/share/zlux-app-server/bin/install-app.sh $PREFIX/opt/zowe/plugins/app-server/$PKG_NAME
   fi
 else

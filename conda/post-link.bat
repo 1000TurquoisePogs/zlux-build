@@ -27,6 +27,7 @@ if exist "%ZOWE_WORKSPACE_DIR%\..\bin\install-app.bat" (
 
 if not defined ZOWE_INST (
   if not defined ZOWE_ROOT (
+    echo "%PKG_NAME% not registered to Zowe because no instance found. To manually install, run INSTANCE_DIR\bin\install-app.bat %PREFIX%\opt\zowe\plugins\app-server\%PKG_NAME%"
     exit 1
   ) else (
     !ZOWE_ROOT!\components\app-server\share\zlux-app-server\bin\install-app.bat %PREFIX%\opt\zowe\plugins\app-server\%PKG_NAME%

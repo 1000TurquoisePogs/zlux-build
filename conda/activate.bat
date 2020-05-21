@@ -26,9 +26,7 @@ if exist "%ZOWE_WORKSPACE_DIR%\..\bin\install-app.bat" (
 )
 
 if not defined ZOWE_INST (
-  if not defined ZOWE_ROOT (
-    exit 1
-  ) else (
+  if defined ZOWE_ROOT (
     !ZOWE_ROOT!\components\app-server\share\zlux-app-server\bin\install-app.bat %PREFIX%\opt\zowe\plugins\app-server\%PKG_NAME%
   )
 ) else (
