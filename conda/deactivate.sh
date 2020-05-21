@@ -28,5 +28,5 @@ then
 elif [ -e "${ZOWE_INST}/workspace/app-server/plugins/${PKG_NAME}.json" ]
 then
   location=$PREFIX/opt/zowe/plugins/app-server/$PKG_NAME/$PKG_VERSION
-  node -e "const fs=require('fs'); const content=require(${ZOWE_INST}/workspace/app-server/plugins/${PKG_NAME}); if (content.pluginLocation == ${location}) { fs.unlinkSync(${ZOWE_INST}/workspace/app-server/plugins/${PKG_NAME}); }"
+  node -e "const fs=require('fs'); const content=require('${ZOWE_INST}/workspace/app-server/plugins/${PKG_NAME}'); if (content.pluginLocation == '${location}') { fs.unlinkSync('${ZOWE_INST}/workspace/app-server/plugins/${PKG_NAME}'); }"
 fi
