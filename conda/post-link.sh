@@ -32,9 +32,9 @@ then
   ZOWE_INST=${INSTANCE_DIR}
 fi
 
-if [ -z $ZOWE_INST ]
+if [ -z "$ZOWE_INST" ]
 then
-  if [ -z $ZOWE_ROOT ]
+  if [ -z "$ZOWE_ROOT" ]
   then
     echo "${PKG_NAME} not registered to Zowe because no instance found. To manually install, run INSTANCE_DIR/bin/install-app.sh $PREFIX/opt/zowe/plugins/app-server/$PKG_NAME"
   else

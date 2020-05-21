@@ -32,9 +32,9 @@ then
   ZOWE_INST=${INSTANCE_DIR}
 fi
 
-if [ -z $ZOWE_INST ]
+if [ -z "$ZOWE_INST" ]
 then
-  if [ -n $ZOWE_ROOT ]
+  if [ -d "$ZOWE_ROOT" ]
   then
     ${ZOWE_ROOT}/components/app-server/share/zlux-app-server/bin/install-app.sh $PREFIX/opt/zowe/plugins/app-server/$PKG_NAME
   fi
