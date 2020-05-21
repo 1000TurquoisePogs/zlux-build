@@ -16,4 +16,11 @@ cp -r ${SRC_DIR}/* $destination
 cd $destination
 rm -f build_env_setup.sh conda_build.sh metadata_conda_debug.yaml *.ppf
 
+mkdir -p "${PREFIX}/etc/conda/activate.d"
+mkdir -p "${PREFIX}/etc/conda/deactivate.d"
+cp "${RECIPE_DIR}/activate.sh" "${PREFIX}/etc/conda/activate.d/${PKG_NAME}_activate.sh"
+cp "${RECIPE_DIR}/activate.bat" "${PREFIX}/etc/conda/activate.d/${PKG_NAME}_activate.bat"
+cp "${RECIPE_DIR}/deactivate.sh" "${PREFIX}/etc/conda/deactivate.d/${PKG_NAME}_deactivate.sh"
+cp "${RECIPE_DIR}/deactivate.bat" "${PREFIX}/etc/conda/deactivate.d/${PKG_NAME}_deactivate.bat"
+
 exit 0
